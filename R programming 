@@ -1,0 +1,39 @@
+student_name <- readline("Enter Student Name: ")
+
+subjects <- c("Mathematics", "Statistics", "Programming", "Database", "English")
+marks <- numeric(5)
+
+for(i in 1:5){
+  marks[i] <- as.numeric(readline(paste("Enter marks for", subjects[i], ": ")))
+}
+
+total <- sum(marks)
+average <- mean(marks)
+
+if(any(marks < 35)){
+  result <- "FAIL"
+  grade <- "-"
+} else if(average >= 90){
+  result <- "PASS"
+  grade <- "A+"
+} else if(average >= 80){
+  result <- "PASS"
+  grade <- "A"
+} else if(average >= 70){
+  result <- "PASS"
+  grade <- "B"
+} else if(average >= 60){
+  result <- "PASS"
+  grade <- "C"
+} else {
+  result <- "PASS"
+  grade <- "D"
+}
+
+cat("\nStudent Report\n")
+cat("-------------------------\n")
+cat("Name    :", student_name, "\n")
+cat("Total   :", total, "\n")
+cat("Average :", round(average, 2), "\n")
+cat("Grade   :", grade, "\n")
+cat("Result  :", result, "\n")
