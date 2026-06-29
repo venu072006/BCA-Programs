@@ -5,6 +5,7 @@ marks <- numeric(5)
 
 for(i in 1:5){
   marks[i] <- as.numeric(readline(paste("Enter marks for", subjects[i], ": ")))
+
 }
 
 total <- sum(marks)
